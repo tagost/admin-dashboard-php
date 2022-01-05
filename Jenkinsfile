@@ -16,8 +16,8 @@ node {
 				sshCommand remote: remote, command: 'docker push tagost/admin-php'
 			}*/
 			stage ('Deploy aplication'){
-				sshCommand remote: remote, command: 'docker rm -fv admin-php'
-				sshCommand remote: remote, command: "docker-compose up -d"
+				sshCommand remote: remote, command: 'docker rm -fv admin'
+				sshCommand remote: remote, command: "cd admin-dashboard-php && docker-compose up -d"
 			}
 		}		
 	}
