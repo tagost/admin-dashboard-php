@@ -1,0 +1,32 @@
+version: "3.9"
+    
+services:
+  db:
+    image: tagost/postgres
+    container_name: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+    
+   admin-php:
+    depends_on:
+      - db
+    image: tagost/admin-php
+    container_name: admin
+    #volumes:
+     # - wordpress_data:/var/www/html
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: postgres
+      DB_USER: postgres
+      DB_USER_PASSWORD: 123456
+volumes:
+  db_data: {}
