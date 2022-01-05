@@ -12,7 +12,7 @@ services:
       #POSTGRES_DB: postgres
       #POSTGRES_USER: postgres
     
-   admin-php:
+  admin-php:
     depends_on:
       - db
     image: tagost/admin-php
