@@ -19,11 +19,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 ?>
       
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">            
-            <button id="btnNuevo" type="button" class="btn btn-success" data-toggle="modal">Nuevo</button>    
-            </div>    
-        </div>    
+        
     </div>    
     <br>  
     <div class="container">
@@ -31,6 +27,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
                         </div>
+						<div class="row">
+            <div class="col-lg-12">            
+            <button id="btnNuevo" type="button" class="btn btn-success" data-toggle="modal">Nuevo</button>    
+            </div>    
+        </div>    
         <div class="card-body">
                 <div class="col-lg-12">
                     <div class="table-responsive">        
