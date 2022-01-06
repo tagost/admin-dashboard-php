@@ -30,7 +30,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         <div class="row">
                 <div class="col-lg-12">
                     <div class="table-responsive">        
-                        <table id="tablaPersonas" class="table table-striped table-bordered table-condensed" style="width:100%">
+                        <table id="tablaPersonas" class="table table-bordered" width="100%" cellspacing="0">
                         <thead class="text-center">
                             <tr>
                                 <th>Id</th>
