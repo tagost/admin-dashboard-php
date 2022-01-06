@@ -27,7 +27,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
     </div>    
     <br>  
     <div class="container">
-        <div class="row">
+        <div class="card-body">
                 <div class="col-lg-12">
                     <div class="table-responsive">        
                         <table id="tablaPersonas" class="table table-bordered" width="100%" cellspacing="0">
