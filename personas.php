@@ -27,6 +27,10 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
     </div>    
     <br>  
     <div class="container">
+		<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        </div>
         <div class="card-body">
                 <div class="col-lg-12">
                     <div class="table-responsive">        
@@ -58,7 +62,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                        </table>                    
                     </div>
                 </div>
-        </div>  
+        </div> 
+		</div>
     </div>    
       
 <!--Modal para CRUD-->
