@@ -20,7 +20,7 @@ node {
 				sshCommand remote: remote, command: "cd admin-dashboard-php && docker-compose up -d"
 			}*/
 			stage ('Deploy aplication'){
-				sshCommand remote: remote, command: 'helm repo add admin-php https://github.com/tagost/helmcharts && helm uninstall admin && sleep 3'
+				sshCommand remote: remote, command: '(helm repo add admin-php https://github.com/tagost/helmcharts || true) && helm uninstall admin && sleep 3'
 				sshCommand remote: remote, command: "helm install admin admin-php/admin-php"
 			}
 		}		
