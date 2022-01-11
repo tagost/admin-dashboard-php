@@ -1,7 +1,7 @@
 <?php 
 class Conexion{	  
     public static function Conectar() {        
-        define('servidor', 'db');
+        define('servidor', 'admin-mysql-headless');
         define('nombre_bd', 'crud_2019');
         define('usuario', 'root');
         define('password', 'root');					        
