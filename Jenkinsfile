@@ -9,7 +9,7 @@ node {
 		remote.identityFile = identity
 		withEnv(["DIR=${env.WORKSPACE}"]){
 			stage('Build docker image') {
-				sshCommand remote: remote, command: 'env && rm -rf admin-dashboard-php && git clone https://github.com/tagost/admin-dashboard-php.git'
+				sshCommand remote: remote, command: 'rm -rf admin-dashboard-php && git clone https://github.com/tagost/admin-dashboard-php.git'
 				sshCommand remote: remote, command: "cd admin-dashboard-php && docker build -t tagost/admin-php ."
 			}
 			stage ('Docker push'){
@@ -20,7 +20,7 @@ node {
 				sshCommand remote: remote, command: "cd admin-dashboard-php && docker-compose up -d"
 			}*/
 			stage ('Deploy aplication'){
-				sshCommand remote: remote, command: 'helm repo add --force-update admin-php  https://tagost.github.io/helmcharts/ && helm uninstall admin && sleep 3'
+				sshCommand remote: remote, command: 'helm repo add --force-update admin-php  https://tagost.github.io/helmcharts/ && helm uninstall admin || true && sleep 3'
 				sshCommand remote: remote, command: "helm install admin admin-php/admin-php"
 			}
 		}		
