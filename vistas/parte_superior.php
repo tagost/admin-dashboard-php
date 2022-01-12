@@ -137,6 +137,19 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span><? echo gethostname(); ?></span></a>
             </li>
+            
+	    <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span><?php
+  			     $x = 0.0001;
+  			     for ($i = 0; $i <= 1000000; $i++) {
+    				$x += sqrt($x);
+  			     }
+  				echo "OK!";
+			     ?></span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -358,3 +371,4 @@
 
                 </nav>
                 <!-- End of Topbar -->
+		
