@@ -9,7 +9,7 @@ node {
 		remote.identityFile = identity
 		withEnv(["DIR=${env.WORKSPACE}"]){
 			stage('Build docker image') {
-				sshCommand remote: remote, command: 'id && rm -rf admin-dashboard-php && git clone https://github.com/tagost/admin-dashboard-php.git'
+				sshCommand remote: remote, command: 'env && rm -rf admin-dashboard-php && git clone https://github.com/tagost/admin-dashboard-php.git'
 				sshCommand remote: remote, command: "cd admin-dashboard-php && docker build -t tagost/admin-php ."
 			}
 			stage ('Docker push'){
