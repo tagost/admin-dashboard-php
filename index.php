@@ -102,6 +102,7 @@
 
             </div>
             <!-- End of Main Content -->
-<?php require_once "vistas/parte_inferior.php"
+<?php require_once "vistas/parte_inferior.php"?>
+<?
 echo gethostname();
 ?>
