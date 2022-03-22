@@ -16,12 +16,12 @@ services:
     depends_on:
       - db
     build: .
-    image: tagost/admin-php
+    image: tagost/admin-php:fpm-nginx
     container_name: admin
     #volumes:
      # - wordpress_data:/var/www/html
     ports:
-      - "9000:80"
+      - "9000:8080"
     restart: always
     environment:
       DB_HOST: db
